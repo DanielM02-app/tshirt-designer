@@ -1,25 +1,17 @@
-import logo from './logo.svg';
 import './App.css';
+import React, { useState } from 'react';
+import TShirt from './components/TShirt';
+import Customizer from './components/Customizer';
 
 function App() {
+  const [color, setColor] = useState('#ff6600');
+  const [message, setMessage] = useState('Hello React!');
   return (
     <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
+      <h1>Custom T-Shirt Designer</h1>
+      <Customizer color={color} setColor={setColor} message={message} setMessage={setMessage} />
+      <TShirt color={color} message={message} />
     </div>
   );
 }
-
 export default App;
